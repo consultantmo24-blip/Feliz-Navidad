@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎄 ¡Feliz Navidad! 🎄</title>
+  <style>
+  
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f5132, #198754);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.25);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .tree {
+      font-size: 5em;
+      margin: 20px 0;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #dc3545;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #198754;
+    }
+	.snowflake {
+	  position: fixed;
+	  top: -10px;
+	  color: white;
+	  font-size: 1em;
+	  user-select: none;
+	  pointer-events: none;
+	  animation: fall linear infinite;
+	}
+
+	@keyframes fall {
+	  to {
+		transform: translateY(100vh);
+	  }
+	}
+	
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="tree">🎄💝</div>
+    <h1>¡Feliz Navidad!</h1>
+    <p>
+Que esta Navidad llene tu vida de paz, amor y esperanza.
+Que nunca falte salud, alegría ni motivos para sonreír.
+Gracias por formar parte de mi vida y por cada momento compartido.
+Deseo de corazón que el próximo año llegue con nuevas oportunidades, sueños cumplidos y muchas bendiciones para ti y los tuyos 🎁🤍
+    </p>
+    <button class="btn" onclick="alert('🎅🎁Que esta Navidad te abrace con esperanza, amor y nuevas oportunidades. Te deseo lo mejor hoy y en el año que viene 🎄✨')">
+      Ver mensaje
+    </button>
+    <footer>
+      Con cariño ❤️<br />
+      Monica Llanos Martinez 😊
+    </footer>
+  </div>
+  
+  <script>
+  const snowCount = 100; // ⬅️ AUMENTA ESTE NÚMERO (ej: 150 o 200)
+
+  for (let i = 0; i < snowCount; i++) {
+    const snow = document.createElement("div");
+    snow.className = "snowflake";
+    snow.innerHTML = Math.random() > 0.1 ? "❄" : "✨";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = (4 + Math.random() * 6) + "s";
+    snow.style.opacity = Math.random();
+    snow.style.fontSize = (10 + Math.random() * 20) + "px";
+    document.body.appendChild(snow);
+  }
+</script>
+</body>
+</html>
