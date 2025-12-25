@@ -114,5 +114,15 @@ Deseo de corazón que el próximo año llegue con nuevas oportunidades, sueños 
     document.body.appendChild(snow);
   }
 </script>
+	<!-- Contador de visitas -->
+<p id="contador" style="margin-top:20px; font-size:1em;">Visitas: <span id="visitas">0</span></p>
+
+<script>
+fetch('https://api.countapi.xyz/hit/monica/navidad/')
+.then(res => res.json())
+.then(data => {
+  document.getElementById('visitas').innerText = data.value;
+});
+</script>
 </body>
 </html>
